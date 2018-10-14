@@ -34,13 +34,6 @@ for user in users_cur:
     count+=1
 print(count)
 
-users_cur = users_collection.find( { "$and" : [{"name": {"$in":f_user_list }}, {"verified":True}]} , {"name":1, "id":1,"_id":0})
-false_users_id=[]
-
-for user in users_cur:
-    print(user)
-    false_users_id.append(user['id'])
-
 users_cur = users_collection.find( { "name": {"$in":f_user_list }} , {"name":1, "id":1,"_id":0})
 false_users_id=[]
 count =0
